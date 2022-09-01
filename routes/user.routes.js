@@ -25,7 +25,9 @@ router.get('/profile/settings', (req, res) => {
     res.render('profileSettings');
   }
   else res.redirect('/user/no-permission');
-})
+});
 
-
+router.get('/logout', (req, res) => {
+  res.render('logout');
+});
 module.exports = router;
