@@ -4,7 +4,8 @@ const router = express.Router();
 
 router.get('/logged', (req, res) => {
   if (req.user) {
-    res.render('logged');
+    console.log('useR', req.user);
+    res.render('logged', {name: req.user.name.givenName, photo: req.user.photos[0].value});
   }
   else res.redirect('/user/no-permission');
 });
